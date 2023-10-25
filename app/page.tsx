@@ -63,21 +63,25 @@ export default function Home() {
           </div>
         ) : (
           <div>
-            <DataTable
-              value={tableData}
-              showGridlines
-              tableStyle={{ minWidth: "50rem" }}
-            >
-              <Column
-                field="num"
-                header="SI Number"
-                style={{ width: "15%" }}
-              ></Column>
-              <Column field="name" header="Name"></Column>
-              <Column field="age" header="Age"></Column>
-              <Column field="nationality" header="Nationality"></Column>
-              <Column field="gender" header="Gender"></Column>
-            </DataTable>
+            {Object.keys(tableData[0])?.length > 0 ? (
+              <DataTable
+                value={tableData}
+                showGridlines
+                tableStyle={{ minWidth: "50rem" }}
+              >
+                <Column
+                  field="num"
+                  header="SI Number"
+                  style={{ width: "15%" }}
+                ></Column>
+                <Column field="name" header="Name"></Column>
+                <Column field="age" header="Age"></Column>
+                <Column field="nationality" header="Nationality"></Column>
+                <Column field="gender" header="Gender"></Column>
+              </DataTable>
+            ) : (
+              ""
+            )}
           </div>
         )}
       </div>
