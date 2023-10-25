@@ -14,7 +14,7 @@ import { ProgressSpinner } from "primereact/progressspinner";
 
 export default function Home() {
   const [name, setname] = useState("");
-  const [tableData, setTableData] = useState([]);
+  const [tableData, setTableData] = useState([{}]);
   const [showProgressBar, setshowProgressBar] = useState(false);
   const updateName = async () => {
     setshowProgressBar(true);
