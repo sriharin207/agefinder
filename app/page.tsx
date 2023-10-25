@@ -31,7 +31,10 @@ export default function Home() {
       name: name,
       age: firstResponse.data?.age,
       nationality: secondResponse.data?.country?.sort(
-        (a, b) => a?.country + b?.country
+        (
+          a: { country: { probability: any } },
+          b: { country: { probability: any } }
+        ) => a?.country?.probability + b?.country?.probability
       )[0]?.country_id,
       gender: thirdResponse.data?.gender,
     };
